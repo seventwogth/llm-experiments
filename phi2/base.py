@@ -42,7 +42,7 @@ def generate_text_basic(prompt):
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=50,  # Ограничим длину для теста
+            max_new_tokens=50,
             pad_token_id=tokenizer.eos_token_id
         )
     
