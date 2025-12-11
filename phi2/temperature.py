@@ -15,11 +15,11 @@ def load_model():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
         
-    dtype = torch.float16 if device == "cuda" else torch.float32
+    dtype_frac = torch.float16 if device == "cuda" else torch.float32
     
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME,
-        torch_dtype=dtype,
+        dtype=dtype_frac,
         device_map="auto" if device == "cuda" else None,
         trust_remote_code=True
     )
