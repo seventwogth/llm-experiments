@@ -51,10 +51,10 @@ def generate_text_basic(prompt):
     
     # Выводим результат
     result = text[len(prompt):].strip()
-    print(f"[RESULT]:\n{result}")
+    print(f"[RESULT]: {result}")
     return result
 
 # Промпты на английском, потому что модель не так хорошо работает с промптами на русском
 if __name__ == "__main__":
-    test_prompt = "В каком году была основана Священная Римская Империя?"
+    test_prompt = "324 * 11 ="
     generate_text_basic(test_prompt)
